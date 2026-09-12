@@ -59,8 +59,8 @@ try {
       const broken = await page.locator('img').evaluateAll((imgs) => imgs.filter((img) => !img.complete || img.naturalWidth === 0).map((img) => img.src))
       assert.deepEqual(broken, [], 'Broken images')
       if (width >= 768) {
-        const ratio = await page.locator('.hero-layout').evaluate((node) => node.getBoundingClientRect().width / document.documentElement.clientWidth)
-        assert.ok(Math.abs(ratio - .8) < .002, 'Content should occupy 80% width')
+        const contentWidth = await page.locator('.hero-layout').evaluate((node) => node.getBoundingClientRect().width)
+        assert.ok(Math.abs(contentWidth - Math.min(width * .8, 1360)) < 1, 'Content should use shared gutters with a 1360px cap')
       }
       if (width < 1280) {
         const trigger = page.locator('.menu-trigger')
@@ -94,7 +94,7 @@ try {
       }
       assert.deepEqual(errors, [], 'Browser console/runtime errors')
       await context.close()
-      console.log('PASS', language, width + 'px', 'images / 80% grid / overflow / modal / menu')
+      console.log('PASS', language, width + 'px', 'images / capped grid / overflow / modal / menu')
     }
   }
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } })

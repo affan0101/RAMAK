@@ -11,11 +11,11 @@ export function Services({ t }) {
   const [activeGroup, setActiveGroup] = useState(null)
   return <section id="services" className="section section-soft"><div className="shell">
     <SectionHeading eyebrow={t.services.eyebrow} title={t.services.title} body={t.services.intro} />
-    <div className="service-grid">{serviceGroups.map((group, index) => {
+    <div className="service-grid">{serviceGroups.map((group) => {
       const Icon = iconMap[group.icon]
       const content = t.services.groups[group.id]
       return <article className="service-card" key={group.id} data-reveal>
-        <div className="service-photo"><ResponsiveImage {...serviceImagery[group.id]} alt={content.title} sizes="(max-width: 620px) 92vw, (max-width: 1199px) 40vw, 20vw" /><span className="service-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span></div>
+        <div className="service-photo"><ResponsiveImage {...serviceImagery[group.id]} alt={content.title} sizes="(max-width: 699px) calc(100vw - 40px), (max-width: 1279px) 40vw, 20vw" /></div>
         <div className="service-card-body"><span className="service-icon"><Icon size={23} aria-hidden="true" /></span><h3>{content.title}</h3><p>{content.summary}</p>
           <button className="text-button" type="button" onClick={() => setActiveGroup(group)} aria-label={`${t.common.learnMore}: ${content.title}`}>{t.common.learnMore}<ArrowUpRight className="directional-icon" size={19} aria-hidden="true" /></button>
         </div>

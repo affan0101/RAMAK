@@ -24,9 +24,11 @@ Open the local URL printed by Vite. All nine AI-generated photographs and their 
 
 ## Design update
 
-- Shared 80% viewport-width content grid at tablet/desktop widths (700px and above); 16–20px mobile gutters. Background sections remain full bleed.
-- Refined navy/cyan/amber palette, balanced headline, editorial image frame, photographic service cards, and layered About imagery.
-- Finite hero/circuit entrances, staggered scroll reveals, image hover motion, active navigation, and reduced-motion support.
+- Shared 80% viewport-width content grid, capped at 1360px on wide screens; 16–20px mobile gutters. Background sections remain full bleed.
+- Headings and section spacing reduced by approximately 20%, with smaller buttons, cards and image frames. Body copy remains readable, controls retain 44px targets, and mobile form inputs remain 16px.
+- Restrained navy, muted cyan and warm amber; simpler photographic framing, fewer badges and shadows, straightforward English/Arabic copy, and a compact service-area list.
+- The supplied `public/images/hero.png` fills the entire hero as an edge-to-edge background, with text above a directional dark overlay. `hero-wide.webp` retains the original 1763 × 892 resolution; the header blends into the photograph and becomes solid after scrolling. English/Arabic use matching overlay directions, and mobile retains `object-fit: cover`.
+- Short entrance and scroll transitions, subtle image hover motion, active navigation, and reduced-motion support.
 - Native modal dialogs with trapped focus, Escape dismissal, focus restoration, and scroll locking.
 - Fully local demo form; phone, email and WhatsApp buttons show a demo warning and never open a placeholder contact.
 - Translated service areas, project locations, navigation labels, image disclosures and form messages.
@@ -59,7 +61,7 @@ The form validates in the browser only. It does **not** send email, call an API,
 
 ## Imagery note
 
-Nine coordinated photorealistic demo assets were generated using the built-in AI image-generation tool. They are illustrative, not actual RAMAK personnel, completed work, or evidence of certifications. Review and approve their suitability before public use. Image prompts and provenance are documented in `AI_IMAGE_PROMPTS.md`. Each asset has a 1440px and 640px WebP variant. The hero is prioritized; below-fold images are lazy-loaded.
+The demonstration uses nine illustrative image subjects. The current hero comes from the user-supplied `public/images/hero.png`; the other images retain their original generated assets. The images are not evidence of actual RAMAK personnel, completed work, or certifications. Review and approve their suitability before public use. Image prompts and provenance are documented in `AI_IMAGE_PROMPTS.md`. Each asset has a 1440px and 640px WebP variant. The hero is prioritized; below-fold images are lazy-loaded.
 
 All assets use local paths in `src/data/images.js`; no stock hotlinks, temporary workspace paths, or external image APIs are needed. To process replacement originals later, use `node scripts/prepare-images.mjs /path/to/approved-originals` with PNG filenames matching the nine asset names. This intentionally replaces the optimized copies; review the git diff before committing.
 
@@ -81,6 +83,6 @@ Temporary content includes customer types, proposed services, service model, ser
 
 ## Browser testing
 
-`npm run test:browser` starts its own local production preview, checks both languages at eight widths (320–1920px), image loading, the 80% grid, modal/menu focus, overflow, form validation, zero network requests on submit, and accessibility. It writes screenshots to the ignored `test-results/` folder. To use an existing compatible Chromium installation instead, set `CHROME_PATH` to its executable for the test process.
+`npm run test:browser` starts its own local production preview, checks both languages at eight widths (320–1920px), image loading, the capped content grid, modal/menu focus, overflow, form validation, zero network requests on submit, and accessibility. It writes screenshots to the ignored `test-results/` folder. To use an existing compatible Chromium installation instead, set `CHROME_PATH` to its executable for the test process.
 
 The `typecheck` command validates the JavaScript project configuration with `tsc`; the project retains JavaScript and its existing `checkJs: false` setting. This is not strict TypeScript type checking.

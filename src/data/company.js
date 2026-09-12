@@ -13,6 +13,8 @@ export const company = {
   },
   demo: {
     // DEMO CONTENT: Replace after client approval
+    presentationCopyKeys: ['hero', 'about.body2', 'about.points', 'trust', 'services', 'why', 'process', 'projects', 'areas', 'faq', 'footer.summary'],
+    // DEMO CONTENT: Replace after client approval
     customersServed: ['residential', 'commercial'],
     // DEMO CONTENT: Replace after client approval
     serviceModel: ['installation', 'repair', 'troubleshooting', 'maintenance'],

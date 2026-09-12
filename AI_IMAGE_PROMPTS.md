@@ -1,10 +1,10 @@
 # RAMAK AI image provenance and prompts
 
-Generated for this demonstration using the built-in image-generation tool (not the CLI/API fallback). These are illustrative synthetic visuals, not real RAMAK employees, completed projects, evidence of qualifications, or exact geographic documentation.
+The original image set was generated for this demonstration using the built-in image-generation tool (not the CLI/API fallback). The current hero was subsequently replaced with the user-supplied PNG described below. These are illustrative visuals, not evidence of real RAMAK employees, completed projects, qualifications, or exact geographic documentation.
 
 ## Asset locations
 
-Each name below has two committed local versions under `public/images/`: `NAME.webp` (1440 × 960) and `NAME-640.webp` (640 × 427). They are already generated and ready to use; no generation tool or API key is required to run the website. The complete 18-file set is approximately 1.3 MB.
+Each name below has two local optimized versions under `public/images/`: `NAME.webp` and `NAME-640.webp`. Most retain their original 1440 × 960 and 640 × 427 dimensions. The replacement hero is 1440 × 729 (97,620 bytes) and 640 × 324 (34,866 bytes). No generation tool or API key is required to run the website.
 
 ## Common prompt construction
 
@@ -16,7 +16,7 @@ Replace NAME and SCENE with the corresponding entries below. Assets were visuall
 
 ## hero
 
-Two professional electrical technicians, one reviewing a tablet and one inspecting a CLOSED grey electrical panel inside a modern Abu Dhabi villa utility room. Show a comfortable waist-up composition, authentic Middle Eastern and South Asian adults, navy workwear with small cyan stitching, white hard hats, clear protective glasses, gloves. Architecture and warm light from a window. Equipment is isolated, no exposed energized wires. Visually compelling premium hero photography, no UI.
+Replaced on 12 September 2026 with the image explicitly supplied by the user at `public/images/hero.png` (1763 × 892). The original PNG is retained. Sharp generated the two responsive WebP copies at quality 83 without altering the source. For the full-width background revision, `hero-wide.webp` preserves the original 1763 × 892 dimensions at WebP quality 85 (132,074 bytes). This revision did not generate a new hero image. The previous generated hero prompt no longer describes the current asset; the current image's generation prompt was not supplied. The website retains the demonstration image disclosure.
 
 ## residential
 

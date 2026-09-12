@@ -1,2 +1,3 @@
+# DEMO SAFEGUARD: Change only after client approval and verification of all business information.
 User-agent: *
 Disallow: /

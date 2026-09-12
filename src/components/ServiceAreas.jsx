@@ -1,0 +1,4 @@
+import { MapPin } from 'lucide-react'
+import { company } from '../data/company.js'
+import { SectionHeading } from './SectionHeading.jsx'
+export function ServiceAreas({t}){return <section className="section section-white"><div className="shell areas-layout"><div><SectionHeading eyebrow={t.areas.eyebrow} title={t.areas.title} body={t.areas.body}/><div className="area-list">{company.demo.serviceAreas.map(x=><span key={x}><MapPin size={16}/>{x}</span>)}</div></div><div className="area-graphic" aria-hidden="true"><div className="area-ring ring-one"/><div className="area-ring ring-two"/><div className="area-ring ring-three"/><div className="area-hub"><strong>{t.areas.hub}</strong><span>{t.areas.hubSub}</span></div>{[1,2,3,4,5].map(n=><span className={`area-node node-${n}`} key={n}/>)}</div></div></section>}

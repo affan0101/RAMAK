@@ -1,0 +1,1 @@
+export function SectionHeading({ eyebrow, title, body, align = 'start', invert = false }) { return <div className={`section-heading section-heading-${align} ${invert ? 'is-inverted' : ''}`} data-reveal><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{body && <p>{body}</p>}</div> }

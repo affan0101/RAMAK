@@ -10,6 +10,27 @@ This is a **demonstration website**. It is deliberately configured with `noindex
 
 React 19.3, Vite 8.3, Tailwind CSS 4.3, JavaScript, Lucide React, local Manrope and Noto Sans Arabic variable fonts. The site is a fully static frontend with no backend, CMS, database, authentication, analytics, or third-party runtime scripts.
 
+## Run locally
+
+Requires Node.js 22.12+ (Node 24 also works). If you already have this repository:
+
+```bash
+git pull --ff-only origin main
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite. All nine AI-generated photographs and their mobile versions are committed under `public/images/`; no image tool, API key, or regeneration is required. Do not overwrite any uncommitted local edits when pulling.
+
+## Design update
+
+- Shared 80% viewport-width content grid at tablet/desktop widths (700px and above); 16–20px mobile gutters. Background sections remain full bleed.
+- Refined navy/cyan/amber palette, balanced headline, editorial image frame, photographic service cards, and layered About imagery.
+- Finite hero/circuit entrances, staggered scroll reveals, image hover motion, active navigation, and reduced-motion support.
+- Native modal dialogs with trapped focus, Escape dismissal, focus restoration, and scroll locking.
+- Fully local demo form; phone, email and WhatsApp buttons show a demo warning and never open a placeholder contact.
+- Translated service areas, project locations, navigation labels, image disclosures and form messages.
+
 ## Setup and verification
 
 ```bash
@@ -34,11 +55,13 @@ LocalBusiness JSON-LD in `index.html` contains verified fields only: legal names
 
 ## Static contact form
 
-The form validates in the browser only. It does **not** send email, call an API, submit to a server, or imply delivery. After a valid submit it shows: “Demo form completed. Online enquiry submission will be connected after client approval.” Data remains on the page until the confirmation is closed.
+The form validates in the browser only. It does **not** send email, call an API, submit to a server, or imply delivery. After a valid submit it shows: “Demo form completed. Online enquiry submission will be connected after client approval.” Data remains on the page until the confirmation is closed. It is not saved in local storage. Selecting email as the preferred contact method requires a valid email address. All placeholder contact actions are guarded.
 
 ## Imagery note
 
-The current demo uses original code-native technical SVG scenes rendered inline, so there are no stock-image URLs, third-party logos, or missing binary assets. The requested photorealistic AI image set could not be generated in the available repository-editing runtime. Replace the SVG demo scenes with client-approved real photography or approved photorealistic generated WebP/AVIF assets before public launch.
+Nine coordinated photorealistic demo assets were generated using the built-in AI image-generation tool. They are illustrative, not actual RAMAK personnel, completed work, or evidence of certifications. Review and approve their suitability before public use. Image prompts and provenance are documented in `AI_IMAGE_PROMPTS.md`. Each asset has a 1440px and 640px WebP variant. The hero is prioritized; below-fold images are lazy-loaded.
+
+All assets use local paths in `src/data/images.js`; no stock hotlinks, temporary workspace paths, or external image APIs are needed. To process replacement originals later, use `node scripts/prepare-images.mjs /path/to/approved-originals` with PNG filenames matching the nine asset names. This intentionally replaces the optimized copies; review the git diff before committing.
 
 ## Verified company information
 
@@ -55,3 +78,9 @@ The current demo uses original code-native technical SVG scenes rendered inline,
 ## Demo information requiring approval
 
 Temporary content includes customer types, proposed services, service model, service areas, working hours, Friday availability, emergency-support wording, phone, WhatsApp, email, team-experience wording, workmanship-warranty wording, safety wording, sample projects, positioning statements, imagery, desired domain, Arabic copy, privacy policy, and the future contact-form destination. See `CLIENT_CONTENT_CHECKLIST.md`.
+
+## Browser testing
+
+`npm run test:browser` starts its own local production preview, checks both languages at eight widths (320–1920px), image loading, the 80% grid, modal/menu focus, overflow, form validation, zero network requests on submit, and accessibility. It writes screenshots to the ignored `test-results/` folder. To use an existing compatible Chromium installation instead, set `CHROME_PATH` to its executable for the test process.
+
+The `typecheck` command validates the JavaScript project configuration with `tsc`; the project retains JavaScript and its existing `checkJs: false` setting. This is not strict TypeScript type checking.

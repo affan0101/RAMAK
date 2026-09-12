@@ -1,9 +1,13 @@
+// DEMO CONTENT: AI-generated illustrations, not actual RAMAK staff or projects.
+const photo = (name) => ({ large: `/images/${name}.webp`, small: `/images/${name}-640.webp` })
 export const imagery = {
-  hero: { large: '/images/hero.svg', small: '/images/hero.svg' },
-  residential: { large: '/images/residential.svg', small: '/images/residential.svg' },
-  distribution: { large: '/images/distribution.svg', small: '/images/distribution.svg' },
-  diagnosis: { large: '/images/diagnosis.svg', small: '/images/diagnosis.svg' },
-  ups: { large: '/images/ups.svg', small: '/images/ups.svg' },
-  maintenance: { large: '/images/maintenance.svg', small: '/images/maintenance.svg' },
-  contact: { large: '/images/contact.svg', small: '/images/contact.svg' },
+  hero: photo('hero'), residential: photo('residential'), commercial: photo('commercial'),
+  ac: photo('ac'), distribution: photo('distribution'), diagnosis: photo('diagnosis'),
+  ups: photo('ups'), maintenance: photo('maintenance'), contact: photo('contact'),
+}
+export const serviceImagery = {
+  electricalInstallation: imagery.commercial, acElectricalConnection: imagery.ac,
+  inverterUps: imagery.ups, wiringRewiring: imagery.diagnosis, lightingPower: imagery.residential,
+  distributionBoards: imagery.distribution, troubleshootingRepairs: imagery.diagnosis,
+  preventiveMaintenance: imagery.maintenance,
 }

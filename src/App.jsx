@@ -19,6 +19,11 @@ export default function App() {
   useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const nodes = Array.from(document.querySelectorAll('[data-reveal]'))
+    nodes.forEach((node) => {
+      node.classList.add('will-reveal')
+      const siblings = Array.from(node.parentElement.children).filter((child) => child.hasAttribute('data-reveal'))
+      node.style.setProperty('--reveal-delay', `${Math.min(siblings.indexOf(node) % 4, 3) * 65}ms`)
+    })
     if (reduceMotion || !('IntersectionObserver' in window)) {
       nodes.forEach((node) => node.classList.add('is-visible'))
       return undefined
@@ -30,7 +35,7 @@ export default function App() {
           observer.unobserve(entry.target)
         }
       })
-    }, { threshold: 0.14, rootMargin: '0px 0px -32px' })
+    }, { threshold: 0.06, rootMargin: '0px 0px -18px' })
     nodes.forEach((node) => observer.observe(node))
     return () => observer.disconnect()
   }, [language])

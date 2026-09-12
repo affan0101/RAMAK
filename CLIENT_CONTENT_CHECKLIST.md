@@ -27,3 +27,7 @@ Complete this checklist after the client meeting and before any public launch or
 - [ ] Remove the “Demonstration Website” label only after approval.
 - [ ] Change `robots` metadata and `public/robots.txt` only after every business detail is verified and the client explicitly approves indexing.
 - [ ] Run lint, typecheck, content verification, production build, bilingual browser checks, accessibility checks, and Lighthouse again after final content replacement.
+
+- [ ] Review all nine AI-generated images against the actual work scope; never describe them as actual staff or completed projects. See `AI_IMAGE_PROMPTS.md`.
+- [ ] Connect approved phone/email/WhatsApp actions only after replacing the guarded demo buttons.
+- [ ] Keep language translations synchronized with the central service-area keys.

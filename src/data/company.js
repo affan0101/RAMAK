@@ -18,13 +18,13 @@ export const company = {
     serviceModel: ['installation', 'repair', 'troubleshooting', 'maintenance'],
     // DEMO CONTENT: Replace after client approval
     serviceAreas: [
-      'Abu Dhabi City',
-      'Musaffah',
-      'Khalifa City',
-      'Mohammed Bin Zayed City',
-      'Al Reem Island',
-      'Yas Island',
-      'Saadiyat Island',
+      'city',
+      'musaffah',
+      'khalifa',
+      'mbz',
+      'reem',
+      'yas',
+      'saadiyat',
     ],
     // DEMO CONTENT: Replace after client approval
     regularWorkingHours: 'Saturday–Thursday, 8:00 AM–8:00 PM',

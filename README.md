@@ -24,6 +24,8 @@ npm run test:browser
 npm run test:lighthouse
 ```
 
+The CI workflow enforces Lighthouse targets of Performance >= 90, Accessibility >= 95, and Best Practices >= 95. During the demonstration stage, the deliberate `noindex, nofollow` safeguard reduces Lighthouse's SEO score because indexability is intentionally disabled. CI records that score without failing while `noindex` is present; once indexing is approved and the safeguard is removed, CI enforces SEO >= 90 as well.
+
 ## Content architecture
 
 Verified licence facts and all temporary business facts are centralized in `src/data/company.js`. Every demo business field carries a `// DEMO CONTENT: Replace after client approval` comment. Services, projects, FAQs, navigation, and image references are held in dedicated data files. English and Arabic are maintained separately under `src/i18n/`.

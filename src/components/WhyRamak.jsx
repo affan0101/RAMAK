@@ -5,8 +5,14 @@ import { SectionHeading } from './SectionHeading.jsx'
 const icons = [ShieldCheck, MessageCircle, Home, Clock, Sparkles, CheckCircle2]
 
 export function WhyRamak({ t }) {
+  const whyBackground = `url("${import.meta.env.BASE_URL}images/WhyRemarkBg.png")`
+
   return (
-    <section id="why-ramak" className="section section-navy why-section">
+    <section
+      id="why-ramak"
+      className="section section-navy why-section"
+      style={{ '--why-ramak-bg': whyBackground }}
+    >
       <div className="shell">
         <SectionHeading eyebrow={t.why.eyebrow} title={t.why.title} body={t.why.note} invert />
         <div className="why-layout">

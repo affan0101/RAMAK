@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/manrope'
 import '@fontsource-variable/noto-sans-arabic'
 import './styles.css'
+import './why-ramak.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

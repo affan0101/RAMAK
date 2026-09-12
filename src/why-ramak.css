@@ -1,0 +1,50 @@
+/* Why RAMAK: keep the supplied background artwork, remove the separate photo card,
+   and reduce the visual scale so the content remains the focus. */
+section.why-section {
+  padding-block: clamp(54px, 4.8vw, 86px);
+  background-size: 100% 100%, auto 92%;
+  background-position: center, right center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+html[dir="rtl"] section.why-section {
+  background-position: center, left center;
+}
+
+.why-section .why-layout {
+  display: block;
+}
+
+.why-section .why-grid {
+  width: min(58%, 780px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+}
+
+@media (max-width: 999px) {
+  section.why-section {
+    background-size: 100% 100%, auto 78%;
+    background-position: center, right bottom;
+  }
+
+  html[dir="rtl"] section.why-section {
+    background-position: center, left bottom;
+  }
+
+  .why-section .why-grid {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  section.why-section {
+    padding-block: 50px;
+    background-size: 100% 100%, auto 58%;
+  }
+
+  .why-section .why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

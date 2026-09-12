@@ -1,8 +1,10 @@
-/* Why RAMAK: keep the supplied background artwork, remove the separate photo card,
-   and reduce the visual scale so the content remains the focus. */
+/* Why RAMAK: use the supplied artwork as a true section background.
+   Keep it full-height so there are no visible image edges, while the tighter
+   section spacing keeps the photograph from feeling oversized. */
 section.why-section {
-  padding-block: clamp(54px, 4.8vw, 86px);
-  background-size: 100% 100%, auto 92%;
+  padding-block: clamp(50px, 4.2vw, 76px);
+  background-color: var(--navy);
+  background-size: 100% 100%, auto 100%;
   background-position: center, right center;
   background-repeat: no-repeat, no-repeat;
 }
@@ -16,19 +18,24 @@ html[dir="rtl"] section.why-section {
 }
 
 .why-section .why-grid {
-  width: min(58%, 780px);
+  width: min(57%, 760px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px 28px;
+  gap: 20px 28px;
+}
+
+.why-section .why-card {
+  padding-bottom: 19px;
 }
 
 @media (max-width: 999px) {
   section.why-section {
-    background-size: 100% 100%, auto 78%;
-    background-position: center, right bottom;
+    padding-block: clamp(48px, 6vw, 66px);
+    background-size: 100% 100%, auto 100%;
+    background-position: center, right center;
   }
 
   html[dir="rtl"] section.why-section {
-    background-position: center, left bottom;
+    background-position: center, left center;
   }
 
   .why-section .why-grid {
@@ -39,8 +46,7 @@ html[dir="rtl"] section.why-section {
 
 @media (max-width: 640px) {
   section.why-section {
-    padding-block: 50px;
-    background-size: 100% 100%, auto 58%;
+    padding-block: 46px;
   }
 
   .why-section .why-grid {
